@@ -22,3 +22,31 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+ .ListaCarti{
+    width:auto;
+    padding:10px;
+    float:left;
+    border-top: 2px solid blue;
+    
+ }
+
+ .cautare{
+    width:auto;
+    align-content:center;
+    padding:10px;
+    float:inherit;
+    border-bottom:2px solid green;
+    margin-top:50px;
+ }
+
+ .action-bar{
+      width:auto;
+    padding:10px;
+    float:inherit;
+    border-top: 2px solid green;
+    border-bottom:2px solid green;
+    margin-top:50px;
+    margin-bottom:50px;
+ }

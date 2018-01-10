@@ -135,12 +135,12 @@
     <Compile Include="Evenimente\ProcesatorEveniment.cs" />
     <Compile Include="Evenimente\ProcesatorImprumutare.cs" />
     <Compile Include="Evenimente\TipEveniment.cs" />
-    <Compile Include="Modele\Admin.cs" />
     <Compile Include="Modele\AdresaContact.cs" />
     <Compile Include="Modele\Carte.cs" />
     <Compile Include="Modele\DTO\CarteAchiz.cs" />
     <Compile Include="Modele\DTO\CarteAdaugata.cs" />
     <Compile Include="Modele\DTO\CarteImprum.cs" />
+    <Compile Include="Modele\Evenimente\EvenimentNecunoscutExceptie.cs" />
     <Compile Include="Modele\Gen_continut.cs" />
     <Compile Include="Modele\Gen_tip.cs" />
     <Compile Include="Modele\ISSN.cs" />

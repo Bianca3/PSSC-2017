@@ -10,7 +10,11 @@ namespace DDD.Evenimente
     {
         public override void Proceseaza(Eveniment e)
         {
-            throw new NotImplementedException();
+            var repo = new WriteRepository();
+            repo.SalvareEvenimente(e);
+            repo.ActualizareEvenimente(e);
+            var send = new Sender();
+            bool trimis = send.Trimite(e);
         }
     }
 }

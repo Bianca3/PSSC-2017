@@ -16,7 +16,6 @@ C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proie
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\WebMvcLibrarie.dll
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\WebMvcLibrarie.pdb
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\Antlr3.Runtime.dll
-C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\DDD.dll
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\EntityFramework.dll
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\EntityFramework.SqlServer.dll
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\Microsoft.AI.Agent.Intercept.dll
@@ -82,3 +81,8 @@ C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proie
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\obj\Debug\WebMvcLibrarie.dll
 C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\obj\Debug\WebMvcLibrarie.pdb
+C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\DDD.exe
+C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\RabbitMQ.Client.dll
+C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\WebMvcLibrarie\bin\RabbitMQ.Client.xml

@@ -13,34 +13,34 @@ namespace DDD
     public class WriteRepository
     {
         public void SalvareEvenimente(Eveniment evenimenteNoi)
-
         {
             string id = evenimenteNoi.Id.ToString();
             string detalii = JsonConvert.SerializeObject(evenimenteNoi);
             var tipEveniment = evenimenteNoi.Tip;
             var idRadacina = evenimenteNoi.IdRadacina.ToString();
-            using (var cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
+            using (var con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename" +
                 @"='C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\"+
                 @"WebMvcLibrarie\App_Data\DatabaseCarti.mdf';Integrated Security=True"))
             {
-                string sql = @"INSERT INTO [dbo].[Evenimente](Id,TipEveniment,Detalii,IdRadacina)" +
-                      "VALUES (@id,@tipEveniment,@detalii,@idRad)";
-                var cmd = new SqlCommand(sql, cn);
-                cmd.Parameters
-                    .Add(new SqlParameter("@id", SqlDbType.VarChar))
-                    .Value = id;
-                cmd.Parameters
-                    .Add(new SqlParameter("@tipEveniment", SqlDbType.VarChar))
-                    .Value = tipEveniment;
-                cmd.Parameters
-                    .Add(new SqlParameter("@detalii", SqlDbType.VarChar))
-                    .Value = detalii;
-                cmd.Parameters
-                    .Add(new SqlParameter("@idRad", SqlDbType.VarChar))
-                    .Value = idRadacina;
-                cn.Open();
+                string sql = @"INSERT INTO [dbo].[Evenimente]" +
+                      "VALUES (@id,@detalii,@tipEveniment,@idRad)";
+                var cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@tipEveniment", tipEveniment);
+                cmd.Parameters.AddWithValue("@detalii",detalii);
+                cmd.Parameters.AddWithValue("@idRad", idRadacina);
+                con.Open();
                 int nrinreg = cmd.ExecuteNonQuery();             
             }
+        }
+        public void ActualizareEvenimente(Eveniment evenimenteNoi)
+        {
+
+        }
+
+        public void StergeEvenimente(Eveniment evenimenteNoi)
+        {
+
         }
     }
 }

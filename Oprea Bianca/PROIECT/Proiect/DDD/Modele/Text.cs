@@ -10,7 +10,7 @@ namespace DDD.Modele
     public class Text
     {
         private string nume;
-        public string Numesimplu
+        public string Nume
         {
             get { return nume; }
         }
@@ -29,7 +29,7 @@ namespace DDD.Modele
         }
         public override int GetHashCode()
         {
-            return Numesimplu.GetHashCode();
+            return Nume.GetHashCode();
         }
     }
 }

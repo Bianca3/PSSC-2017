@@ -30,13 +30,26 @@ namespace WebMvcLibrarie.Controllers
 
         public ActionResult Index()
         {
-            return View("Index");
+            ReadRepository read = new ReadRepository();
+            List<string> titluri = new List<string>();
+            titluri = read.Cauta();
+            //List<MCarte> carti = new List<MCarte>();
+            //MCarte mcarte;
+            //foreach (string t in titluri)
+            //{
+            //    mcarte = new MCarte();
+            //    mcarte.titlu = t;
+            //    carti.Add(mcarte);
+            //}
+            ViewBag.ListTitluri = titluri;
+            return View();
         }
         public ActionResult Adaugare()
         {
-            MagistralaComenzi.Instanta.Value.InregistreazaProcesatoareStandard();
-            MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
-            MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
+            //MagistralaComenzi.Instanta.Value.InregistreazaProcesatoareStandard();
+            //MagistralaEvenimente.Instanta.Value.InregistreazaProcesatoareStandard();
+            //MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
+
             Receiver recv = new Receiver();
             string msg = recv.Citeste();
             ViewBag.Message = msg;
@@ -46,18 +59,16 @@ namespace WebMvcLibrarie.Controllers
         [HttpPost]
         public ActionResult Cautare()
         {
-
-            Receiver recv = new Receiver();
-            string msg = recv.Citeste();
-            ViewBag.Message = msg;
-
+            string NumeCarte = Request["NumeCarte"];
+            ReadRepository read = new ReadRepository();
+            read.Cauta(NumeCarte);
             return View("VCautareCarti");
         }
 
         public ActionResult DetaliiCarte()
         {
+            string c = Request[""];
             ViewBag.Message = "Detalii.";
-
             return View("VCarteInf");
         }
 
@@ -83,16 +94,13 @@ namespace WebMvcLibrarie.Controllers
 
             return View();
         }
+
+        [HttpGet]
         public ActionResult Autentificare()
         {
-            ViewBag.Message = "Contact page.";
+            ViewBag.Message = "Login";
 
-            return View();
-        }
-        [HttpGet]
-        public ActionResult Login()
-        {
-            return View();
+            return View("VAutentif");
         }
 
         [HttpPost]
@@ -107,7 +115,7 @@ namespace WebMvcLibrarie.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Login data is incorrect!");
+                    ModelState.AddModelError("", "Date Login incorecte!");
                 }
             }
             return View(user);

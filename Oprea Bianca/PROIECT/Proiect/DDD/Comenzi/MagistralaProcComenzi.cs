@@ -10,10 +10,10 @@ namespace DDD.Comenzi
     {
         public static void InregistreazaProcesatoareStandard(this MagistralaComenzi magistrala)
         {
-            //magistrala.InregistreazaProcesator(new ProcesatorCumparare());
-            //magistrala.InregistreazaProcesator(new ProcesatorCautare());
-            //magistrala.InregistreazaProcesator(new ProcesatorImprumutare());
             magistrala.InregistreazaProcesator(new ProcesatorAdaugare());
+            magistrala.InregistreazaProcesator(new ProcesatorCumparare());
+            magistrala.InregistreazaProcesator(new ProcesatorCautare());
+            magistrala.InregistreazaProcesator(new ProcesatorImprumutare());
         }
     }
 }

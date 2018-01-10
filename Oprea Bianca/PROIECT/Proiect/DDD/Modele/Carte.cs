@@ -7,6 +7,7 @@ using DDD.Evenimente;
 using System.Collections.ObjectModel;
 using static DDD.Evenimente.Eveniment;
 using System.Diagnostics.Contracts;
+using DDD.Modele.Evenimente;
 
 namespace DDD.Modele
 {
@@ -41,21 +42,36 @@ namespace DDD.Modele
             this.genc = genc;
             this.utiliz = utiliz;
         }
-
+        public Carte(IEnumerable<Eveniment> evenimente)
+        {
+            foreach (var e in evenimente)
+            {
+                RedaEveniment(e);
+            }
+        }
         public void Adauga(Carte carte)
         {
-            var e = new EvenimentGeneric<Carte>(Id, TipEveniment.AdaugareCarte, carte);
+            var e = new EvenimentGeneric<Carte>(carte.Id, TipEveniment.AdaugareCarte, carte);
             AplicaAdaug(e);
             PublicaEveniment(e);
         }
-        
+        public void Cumpara(Carte carte)
+        {
+            var e = new EvenimentGeneric<Carte>(carte.Id, TipEveniment.CumparareCarte, carte);
+            AplicaCumpar(e);
+            PublicaEveniment(e);
+        }
         public void Imprumuta(Carte carte)
         {
-
+            var e = new EvenimentGeneric<Carte>(carte.Id, TipEveniment.ImprumutareCarte, carte);
+            AplicaImprumut(e);
+            PublicaEveniment(e);
         }
         public void Restituie(Carte carte)
         {
-
+            var e = new EvenimentGeneric<Carte>(Id, TipEveniment.RestituireCarte, carte);
+            AplicaRestituie(e);
+            PublicaEveniment(e);
         }
         public void AplicaAdaug(EvenimentGeneric<Carte> e)
         {
@@ -65,16 +81,44 @@ namespace DDD.Modele
         {
             if (stare != Stare.InStoc)
                 throw new InvalidOperationException("Cartea nu este in stoc");
-
             stare = Stare.InStoc;
         }
-
+        public void AplicaImprumut(EvenimentGeneric<Carte> e)
+        {
+            if (stare != Stare.Imprumutata)
+                stare = Stare.Imprumutata;
+            else
+                throw new InvalidOperationException("Cartea nu este disponibila");
+        }
+        public void AplicaRestituie(EvenimentGeneric<Carte> e)
+        {
+            stare = Stare.Disponibila;
+        }
+        private void RedaEveniment(Eveniment e)
+        {
+            switch (e.Tip)
+            {
+                case TipEveniment.AdaugareCarte:
+                    AplicaAdaug(e.ToGeneric<Carte>());
+                    break;
+                case TipEveniment.CumparareCarte:
+                    AplicaCumpar(e.ToGeneric<Carte>());
+                    break;
+                case TipEveniment.ImprumutareCarte:
+                    AplicaImprumut(e.ToGeneric<Carte>());
+                    break;
+                case TipEveniment.RestituireCarte:
+                    AplicaRestituie(e.ToGeneric<Carte>());
+                    break;
+                default:
+                    throw new EvenimentNecunoscutExceptie();
+            }
+        }
         protected void PublicaEveniment(Eveniment eveniment)
         {
 
             _evenimenteNoi.Add(eveniment);
             //EvenimentMeci?.Invoke(this, eveniment);
-
             if (_magistralaEveniment != null)
             {
                 _magistralaEveniment.Trimite(eveniment);

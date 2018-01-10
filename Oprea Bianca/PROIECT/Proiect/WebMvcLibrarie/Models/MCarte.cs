@@ -11,7 +11,5 @@ namespace WebMvcLibrarie.Models
         public string ISSN { get; set; }
         public string titlu { get; set; }
         public string autor { get; set; }
-
-
     }
 }

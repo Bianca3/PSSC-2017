@@ -13,7 +13,8 @@ namespace DDD.Comenzi
         {
             Carte carte = new Carte();
             var repo = new ReadRepository();
-            repo.Cauta(carte.Id.ToString());
+            repo.Cauta(carte.titlu.Nume);
+         //   repo.Cauta();
         }
     }
 }

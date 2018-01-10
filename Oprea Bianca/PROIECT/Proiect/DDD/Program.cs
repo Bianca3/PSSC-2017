@@ -19,14 +19,14 @@ namespace DDD
             MagistralaEvenimente.Instanta.Value.InchideInregistrarea();
 
             var carte = new Carte(new Text("1-a"), new ISSN("12"),new Text("titlu1"), new Text("a1"), 1980, Gen_tip.epic, Gen_continut.Aventură, new Utilizator());
-            var cmdAdauga = new ComandaAdaugare();
-            cmdAdauga.carte = carte;
-            MagistralaComenzi.Instanta.Value.Trimite(cmdAdauga);
+            //var cmdAdauga = new ComandaAdaugare();
+            ////cmdAdauga.carte = carte;
+            //MagistralaComenzi.Instanta.Value.Trimite(cmdAdauga);
             var cmdCauta = new ComandaCautare();
             cmdCauta.carte = carte;
             MagistralaComenzi.Instanta.Value.Trimite(cmdCauta);
-            var cmdImprumut = new ComandaImprumutare();
-            MagistralaComenzi.Instanta.Value.Trimite(cmdImprumut);
+            //var cmdImprumut = new ComandaImprumutare();
+            //MagistralaComenzi.Instanta.Value.Trimite(cmdImprumut);
             Console.ReadLine();
         }
     }

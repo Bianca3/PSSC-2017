@@ -1,7 +1,30 @@
-﻿
+﻿@model WebMvcLibrarie.Models.MCarte
+
 @{
-    ViewBag.Title = "Carte";
+    ViewBag.Title = "Detalii Carte";
 }
 
-<h2>Carte</h2>
+<h2>Detalii Carte</h2>
 
+ @using (Html.BeginForm("Adauga", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+ {
+    <p>
+        <input type="submit" value="Adauga" />
+    </p>
+ }
+
+@using (Html.BeginForm("Imprumuta", "Home", new { enctype = "multipart/form-data" }))
+{
+    <p>
+ <!--       <input type="hidden" value="carte.titlu" name="Descriere" />  -->
+        <input type="submit" value="Imprumuta" />
+    </p>
+}
+
+@using (Html.BeginForm("Cumpara", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>
+   <!--      <input type="hidden" value="carte.titlu" name="Descriere" />-->
+        <input type="submit" value="Cumpara" />
+    </p>
+}

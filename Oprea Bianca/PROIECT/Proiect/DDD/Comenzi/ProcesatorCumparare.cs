@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DDD.Modele;
 
 namespace DDD.Comenzi
 {
@@ -10,7 +11,8 @@ namespace DDD.Comenzi
     {
         public override void Proceseaza(ComandaCumparare comanda)
         {
-            throw new NotImplementedException();
+            Carte carte = new Carte();
+            carte.Cumpara(comanda.carte);
         }
     }
 }
