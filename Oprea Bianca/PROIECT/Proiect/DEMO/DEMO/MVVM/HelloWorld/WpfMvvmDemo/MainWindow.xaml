@@ -1,0 +1,22 @@
+﻿<Window x:Name="MainWindow1" x:Class="WpfMvvmDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" DataContext="{Binding Path=Main, Source={StaticResource ResourceKey=Locator}}" Loaded="MainWindow1_Loaded">
+    <Grid Margin="5 5 5 5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center" Margin="0 0 10 0">Nume:</TextBlock>
+        <TextBlock HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Margin="0 0 10 0">Message:</TextBlock>
+        <TextBox Grid.Column="1" Text="{Binding Path=MyText}" Margin="3"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Message}" Margin="3" FontWeight="Bold"></TextBlock>
+        <Button Grid.Column="1" Grid.Row="2" Command="{Binding Path=SayHello}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="3">Say Hello</Button>
+    </Grid>
+</Window>

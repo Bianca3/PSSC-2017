@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scor", "Scor\Scor.csproj", "{7E129303-2C7B-4702-BC81-8C53AF564C4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste", "Teste\Teste.csproj", "{E38E7312-1E76-43A7-98B8-D35FD8DF8639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste.Model", "Teste.Model\Teste.Model.csproj", "{07301EDE-A1C0-4916-A758-C8280EE927C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7CCC9E9F-D508-4F5D-86A5-75B162714FA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste.ScorMvc", "Teste.ScorMvc\Teste.ScorMvc.csproj", "{8735CBAA-73A2-479D-A3CA-885B29ED6E72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E129303-2C7B-4702-BC81-8C53AF564C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E129303-2C7B-4702-BC81-8C53AF564C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E129303-2C7B-4702-BC81-8C53AF564C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E129303-2C7B-4702-BC81-8C53AF564C4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E38E7312-1E76-43A7-98B8-D35FD8DF8639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E38E7312-1E76-43A7-98B8-D35FD8DF8639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E38E7312-1E76-43A7-98B8-D35FD8DF8639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E38E7312-1E76-43A7-98B8-D35FD8DF8639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07301EDE-A1C0-4916-A758-C8280EE927C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07301EDE-A1C0-4916-A758-C8280EE927C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07301EDE-A1C0-4916-A758-C8280EE927C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07301EDE-A1C0-4916-A758-C8280EE927C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CCC9E9F-D508-4F5D-86A5-75B162714FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CCC9E9F-D508-4F5D-86A5-75B162714FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CCC9E9F-D508-4F5D-86A5-75B162714FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CCC9E9F-D508-4F5D-86A5-75B162714FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8735CBAA-73A2-479D-A3CA-885B29ED6E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8735CBAA-73A2-479D-A3CA-885B29ED6E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8735CBAA-73A2-479D-A3CA-885B29ED6E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8735CBAA-73A2-479D-A3CA-885B29ED6E72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54270D9B-6A36-4236-A8F5-09CEA4C13178}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://b624-software.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Scor\\Scor.csproj
+		SccProjectName1 = Scor
+		SccLocalPath1 = Scor
+		SccProjectUniqueName2 = Teste\\Teste.csproj
+		SccProjectName2 = Teste
+		SccLocalPath2 = Teste
+		SccProjectUniqueName3 = Teste.Model\\Teste.Model.csproj
+		SccProjectName3 = Teste.Model
+		SccLocalPath3 = Teste.Model
+		SccProjectUniqueName4 = Web\\Web.csproj
+		SccProjectName4 = Web
+		SccLocalPath4 = Web
+		SccProjectUniqueName5 = Teste.ScorMvc\\Teste.ScorMvc.csproj
+		SccProjectName5 = Teste.ScorMvc
+		SccLocalPath5 = Teste.ScorMvc
+	EndGlobalSection
+EndGlobal

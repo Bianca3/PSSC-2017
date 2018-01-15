@@ -1,0 +1,52 @@
+﻿@model TodoList.Models.TodoItem
+
+@{
+    ViewBag.Title = "AddTodoItem";
+}
+
+<h2>AddTodoItem</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TodoItem</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DeadLine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DeadLine)
+            @Html.ValidationMessageFor(model => model.DeadLine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDone)
+            @Html.ValidationMessageFor(model => model.IsDone)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

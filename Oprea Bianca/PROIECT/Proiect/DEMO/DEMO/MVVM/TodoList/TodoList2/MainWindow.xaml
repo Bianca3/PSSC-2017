@@ -1,0 +1,8 @@
+﻿<Window x:Class="TodoList2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" DataContext="{Binding Source={StaticResource ResourceKey=Locator}, Path=Main}">
+    <StackPanel>
+        <Button Command="{Binding AddNewItem}"> Add Item </Button>
+    </StackPanel>
+</Window>

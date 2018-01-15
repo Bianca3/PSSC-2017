@@ -1,0 +1,41 @@
+﻿@model List<WebMvcLibrarie.Models.MCarte>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>CautareCarti</h2>
+
+<div class="action-bar">
+    <a href="~/Views/Home/VAutentif.cshtml">Autentificare</a>
+    <span>  |  </span>
+    <a href="~/Views/Home/VInreg.cshtml">Inregistrare</a>
+    @Html.ActionLink("Autentificare", "Autentificare")
+    @Html.ActionLink("Inregistrare", "Inregistrare")
+</div>
+
+<h3>LIB.net</h3>
+
+<div class="cautare">
+    @using (Html.BeginForm("Cautare", "Home", new { enctype = "multipart/form-data" }))
+    {
+        <input type="text" name="NumeCarte" />
+        <span>   </span>
+        <input type="submit" value="Cauta" />
+        <br />
+    }
+
+   
+    @{  
+        string t = ViewBag.titluCautat;
+        if (t != null)
+        {
+            @Html.ActionLink(t, "DetaliiCarte", "Home", new { param = t }, null);
+        }
+        else
+        {
+            <p>Rezultat inexistent</p>
+        }
+     }
+      
+</div>
