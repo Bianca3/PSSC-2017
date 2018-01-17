@@ -20,12 +20,15 @@ namespace DDD.Modele
         Roman_non_ficțiune,
         Paranoic,
         Ficțiune_politică,
-        Psychologic,
+        Psihologic,
         Romanță,
         Supereroi,
         Științifico_fantastic,
         Thriller,
         Western,
-        Memorii
+        Memorii,
+        Război,
+        Ficțiune,
+        Roman
     }
 }

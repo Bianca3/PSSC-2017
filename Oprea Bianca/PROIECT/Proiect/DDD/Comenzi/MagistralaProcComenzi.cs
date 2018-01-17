@@ -14,6 +14,7 @@ namespace DDD.Comenzi
             magistrala.InregistreazaProcesator(new ProcesatorCumparare());
             magistrala.InregistreazaProcesator(new ProcesatorCautare());
             magistrala.InregistreazaProcesator(new ProcesatorImprumutare());
+            magistrala.InregistreazaProcesator(new ProcesatorRestituire());
         }
     }
 }

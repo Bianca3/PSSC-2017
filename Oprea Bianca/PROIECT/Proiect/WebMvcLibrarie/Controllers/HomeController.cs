@@ -33,7 +33,7 @@ namespace WebMvcLibrarie.Controllers
         {
             List<string> titluri = new List<string>();
             titluri = read.TitluCarti();
-            titluri = titluri.Distinct().ToList();
+            titluri = titluri.Distinct().ToList(); 
 
             //List<MCarte> carti = new List<MCarte>();
             //MCarte mcarte;
@@ -50,19 +50,14 @@ namespace WebMvcLibrarie.Controllers
         {
             List<SelectListItem> listItems = new List<SelectListItem>();
             List<SelectListItem> listItems2 = new List<SelectListItem>();
-            SelectListItem sli = new SelectListItem()
+            foreach (Gen_tip gen in Enum.GetValues(typeof(Gen_tip)))
             {
-                Text = Gen_tip.Dramatic.ToString()
-            };
-            SelectListItem sli2 = new SelectListItem()
-            {
-                Text = Gen_tip.Epic.ToString()
-            };
-            SelectListItem sli3 = new SelectListItem()
-            {
-                Text = Gen_tip.Liric.ToString()
-            };
-            listItems.Add(sli); listItems.Add(sli2); listItems.Add(sli3);
+                SelectListItem _sli = new SelectListItem()
+                {
+                    Text = gen.ToString()
+                };
+                listItems.Add(_sli);
+            }
             foreach (Gen_continut gen in Enum.GetValues(typeof(Gen_continut)))
             {
                 SelectListItem _sli = new SelectListItem()
@@ -140,13 +135,12 @@ namespace WebMvcLibrarie.Controllers
             string genc = Request["genc"];
             string st1 = Request["st1"];
             string st2 = Request["st2"];
-            Gen_tip Gent = (Gen_tip)Enum.ToObject(typeof(Gen_tip), gent);
-            Gen_continut Genc = (Gen_continut)Enum.ToObject(typeof(Gen_continut), genc);
+            Gen_tip Gent = (Gen_tip)Enum.Parse(typeof(Gen_tip), gent);            
+            Gen_continut Genc = (Gen_continut)Enum.Parse(typeof(Gen_tip), gent);
             Carte c = new Carte(new Text(id), new ISSN(nr), new Text(titlu),
                 new Text(autor), new Text(an), Gent, Genc, new Utilizator());
-            c.stare1 = (Stare)Enum.ToObject(typeof(Stare), Convert.ToInt32(st1));
-            c.stare2 = (Stare)Enum.ToObject(typeof(Stare), Convert.ToInt32(st2));
-
+            c.stare1 = (Stare)Enum.Parse(typeof(Stare),st1);
+            c.stare2 = (Stare)Enum.Parse(typeof(Stare), st2);
             var cmdCumpar = new ComandaCumparare();
             cmdCumpar.carte = c;
             MagistralaComenzi.Instanta.Value.Trimite(cmdCumpar);
@@ -155,30 +149,63 @@ namespace WebMvcLibrarie.Controllers
             ViewBag.EvenimentMsg = msg;
 
             //        ViewBag.stare1 = c.stare1;
-            return View("VAutentif");
+            return View("VEventMsg");
         }
 
-        public ActionResult Imprumuta(MCarte carte)
+        public ActionResult Imprumuta()
         {
-            Carte c = new Carte(new Text(carte.Id), new ISSN(carte.Nr), new Text(carte.titlu),
-                new Text(carte.autor), new Text(carte.an), carte.gent, carte.genc, new Utilizator());
+            string titlu = Request["titlu"];
+            string autor = Request["autor"];
+            string id = Request["id"];
+            string an = Request["an"];
+            string nr = Request["nr"];
+            string gent = Request["gent"];
+            string genc = Request["genc"];
+            string st1 = Request["st1"];
+            string st2 = Request["st2"];
+            Gen_tip Gent = (Gen_tip)Enum.Parse(typeof(Gen_tip), gent);
+            Gen_continut Genc = (Gen_continut)Enum.Parse(typeof(Gen_tip), gent);
+            Carte c = new Carte(new Text(id), new ISSN(nr), new Text(titlu),
+                new Text(autor), new Text(an), Gent, Genc, new Utilizator());
+            c.stare1 = (Stare)Enum.Parse(typeof(Stare), st1);
+            c.stare2 = (Stare)Enum.Parse(typeof(Stare), st2);
             var cmdImprumut = new ComandaImprumutare();
             cmdImprumut.carte = c;
             MagistralaComenzi.Instanta.Value.Trimite(cmdImprumut);
-     //       ViewBag.stare2 = c.stare2;
-            return View("VCarteInf");
+            //       ViewBag.stare2 = c.stare2;
+            Receiver recv = new Receiver();
+            string msg = recv.Citeste();
+            ViewBag.EvenimentMsg = msg;
+            return View("VEventMsg");
         }
         public ActionResult Restituie()
         {
-            //var cmdImprumut = new ComandaImprumutare();
-            //MagistralaComenzi.Instanta.Value.Trimite(cmdImprumut);
-
-            return View("VCarteInf");
+            string titlu = Request["titlu"];
+            string autor = Request["autor"];
+            string id = Request["id"];
+            string an = Request["an"];
+            string nr = Request["nr"];
+            string gent = Request["gent"];
+            string genc = Request["genc"];
+            string st1 = Request["st1"];
+            string st2 = Request["st2"];
+            Gen_tip Gent = (Gen_tip)Enum.Parse(typeof(Gen_tip), gent);
+            Gen_continut Genc = (Gen_continut)Enum.Parse(typeof(Gen_tip), gent);
+            Carte c = new Carte(new Text(id), new ISSN(nr), new Text(titlu),
+                new Text(autor), new Text(an), Gent, Genc, new Utilizator());
+            c.stare1 = (Stare)Enum.Parse(typeof(Stare), st1);
+            c.stare2 = (Stare)Enum.Parse(typeof(Stare), st2);
+            var cmdRestituie = new ComandaRestituire();
+            cmdRestituie.carte = c;
+            MagistralaComenzi.Instanta.Value.Trimite(cmdRestituie);
+            Receiver recv = new Receiver();
+            string msg = recv.Citeste();
+            ViewBag.EvenimentMsg = msg;
+            return View("VEventMsg");
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Contact page.";
             return View("VContact");
         }
 

@@ -14,8 +14,6 @@ namespace DDD.Evenimente
             repo.SalvareEvenimente(e);
             var send = new Sender();
             bool trimis = send.Trimite(e);
-            var rcv = new Receiver();
-            string m = rcv.Citeste();
         }
     }
 }

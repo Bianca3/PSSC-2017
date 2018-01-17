@@ -1,0 +1,1 @@
+﻿select row_number() over (partition by IdRadacina order by IdRadacina) as nr, Detalii from Evenimente where IdRadacina = '359-gi5f-rr4' order by nr desc

@@ -51,6 +51,17 @@ textarea {
  }
 
  .container body-content{
-     position:fixed;
+     position:absolute;
      bottom: 0;
+     right:0;
+     color:darkgoldenrod;
+ }
+
+ .time{
+      position:fixed;
+     bottom: 0;
+     float:inherit;
+     border-color:aqua;
+     margin-left:50px;
+     color:darkgoldenrod;
  }

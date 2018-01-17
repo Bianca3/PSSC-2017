@@ -261,7 +261,7 @@
     <Content Include="Views\Home\VCarteInf.cshtml" />
     <Content Include="Views\Home\VCautareCarti.cshtml" />
     <Content Include="Views\Home\VAutentif.cshtml" />
-    <Content Include="Views\Home\VInreg.cshtml" />
+    <Content Include="Views\Home\VEventMsg.cshtml" />
     <Content Include="Views\Home\VAdaugareCarte.cshtml" />
   </ItemGroup>
   <ItemGroup />

@@ -22,7 +22,15 @@
         using (Html.BeginForm("Imprumuta", "Home", new { enctype = "multipart/form-data" }))
         {
             <p>
-                <input type="hidden" value="@carte" name="carte" />
+                <input type="hidden" value="@titlu" name="titlu" />
+                <input type="hidden" value="@carte.autor" name="autor" />
+                <input type="hidden" value="@carte.Id" name="id" />
+                <input type="hidden" value="@carte.an" name="an" />
+                <input type="hidden" value="@carte.Nr" name="nr" />
+                <input type="hidden" value="@carte.gent" name="gent" />
+                <input type="hidden" value="@carte.genc" name="genc" />
+                <input type="hidden" value="@carte.stare1" name="st1" />
+                <input type="hidden" value="@carte.stare2" name="st2" />
                 <input type="submit" value="Imprumuta" />
             </p>
         }
@@ -45,19 +53,23 @@
         </p>
     }
 
-@using (Html.BeginForm("Cumpara", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <p>
-        <input type="hidden" value="@titlu" name="titlu" />
-        <input type="hidden" value="@carte.autor" name="autor" />
-        <input type="hidden" value="@carte.Id" name="id" />
-        <input type="hidden" value="@carte.an" name="an" />
-        <input type="hidden" value="@carte.Nr" name="nr" />
-        <input type="hidden" value="@carte.gent" name="gent" />
-        <input type="hidden" value="@carte.genc" name="genc" />
-        <input type="hidden" value="@carte.stare1" name="st1" />
-        <input type="hidden" value="@carte.stare2" name="st2" />
-        <input type="submit" value="Cumpara" />
-    </p>
-}
+ @if (carte.stare1.ToString() == "InStoc")
+ {
+    using (Html.BeginForm("Cumpara", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <p>
+            <input type="hidden" value="@titlu" name="titlu" />
+            <input type="hidden" value="@carte.autor" name="autor" />
+            <input type="hidden" value="@carte.Id" name="id" />
+            <input type="hidden" value="@carte.an" name="an" />
+            <input type="hidden" value="@carte.Nr" name="nr" />
+            <input type="hidden" value="@carte.gent" name="gent" />
+            <input type="hidden" value="@carte.genc" name="genc" />
+            <input type="hidden" value="@carte.stare1" name="st1" />
+            <input type="hidden" value="@carte.stare2" name="st2" />
+            <input type="submit" value="Cumpara" />
+        </p>
+    }
+ }
+
 

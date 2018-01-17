@@ -12,6 +12,7 @@ namespace DDD
 {
     public class WriteRepository
     {
+        List<Eveniment> ListaEv = new List<Eveniment>();
         public void SalvareEvenimente(Eveniment evenimenteNoi)
         {
             string id = evenimenteNoi.Id.ToString();

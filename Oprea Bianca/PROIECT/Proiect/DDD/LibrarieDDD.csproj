@@ -119,6 +119,7 @@
     <Compile Include="Comenzi\ComandaCautare.cs" />
     <Compile Include="Comenzi\ComandaCumparare.cs" />
     <Compile Include="Comenzi\ComandaImprumutare.cs" />
+    <Compile Include="Comenzi\ComandaRestituire.cs" />
     <Compile Include="Comenzi\MagistralaComenzi.cs" />
     <Compile Include="Comenzi\MagistralaProcComenzi.cs" />
     <Compile Include="Comenzi\ProcesatorAdaugare.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Comenzi\ProcesatorComandaGeneric.cs" />
     <Compile Include="Comenzi\ProcesatorCumparare.cs" />
     <Compile Include="Comenzi\ProcesatorImprumutare.cs" />
+    <Compile Include="Comenzi\ProcesatorRestituire.cs" />
     <Compile Include="Evenimente\Eveniment.cs" />
     <Compile Include="Evenimente\MagistralaEvenimente.cs" />
     <Compile Include="Evenimente\MagistralaProcEvenimente.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="Evenimente\ProcesatorCumparare.cs" />
     <Compile Include="Evenimente\ProcesatorEveniment.cs" />
     <Compile Include="Evenimente\ProcesatorImprumutare.cs" />
+    <Compile Include="Evenimente\ProcesatorRestituire.cs" />
     <Compile Include="Evenimente\TipEveniment.cs" />
     <Compile Include="Modele\AdresaContact.cs" />
     <Compile Include="Modele\Carte.cs" />

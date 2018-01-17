@@ -12,7 +12,7 @@ namespace DDD.Evenimente
         {
             var repo = new WriteRepository();
             repo.SalvareEvenimente(e);
-            repo.ActualizareEvenimente(e);
+    //        repo.ActualizareEvenimente(e);
             var send = new Sender();
             bool trimis = send.Trimite(e);
         }

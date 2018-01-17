@@ -7,7 +7,7 @@ using DDD.Modele;
 
 namespace DDD.Comenzi
 {
-    public class ComandaImprumutare:Comanda
+    public class ComandaImprumutare : Comanda
     {
         public Carte carte { get; set; }
     }
