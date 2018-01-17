@@ -13,7 +13,7 @@ namespace DDD.Evenimente
             magistrala.InregistreazaProcesator(TipEveniment.AdaugareCarte, new ProcesatorAdaugare());
             magistrala.InregistreazaProcesator(TipEveniment.CumparareCarte, new ProcesatorCumparare());
             magistrala.InregistreazaProcesator(TipEveniment.ImprumutareCarte, new ProcesatorImprumutare());
-     //       magistrala.InregistreazaProcesator(TipEveniment.RestituireCarte, new ProcesatorRestituire());
+            magistrala.InregistreazaProcesator(TipEveniment.RestituireCarte, new ProcesatorRestituire());
         }
     }
 }

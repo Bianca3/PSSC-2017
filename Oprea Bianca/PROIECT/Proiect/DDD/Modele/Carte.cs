@@ -43,6 +43,21 @@ namespace DDD.Modele
             this.genc = genc;
             this.utiliz = utiliz;
         }
+        public Carte(Carte c, MagistralaEvenimente magistrala = null)
+        {
+            _magistralaEveniment = magistrala;
+            if (c.Id.Nume.Equals(null)) throw new NullReferenceException("Id invalid");
+            var e = new EvenimentGeneric<Carte>(c.Id, TipEveniment.AdaugareCarte, c);
+            AplicaAdaug(e);
+    //        PublicaEveniment(e);
+        }
+        public void Carte2(Carte c, MagistralaEvenimente magistrala = null)
+        {
+            _magistralaEveniment = magistrala;
+            if (c.Id.Nume.Equals(null)) throw new NullReferenceException("Id invalid");
+            var e = new EvenimentGeneric<Carte>(c.Id, TipEveniment.ImprumutareCarte, c);
+            AplicaImprumut(e);
+        }
         public Carte(IEnumerable<Eveniment> evenimente)
         {
             foreach (var e in evenimente)
@@ -70,12 +85,22 @@ namespace DDD.Modele
         }
         public void Restituie(Carte carte)
         {
-            var e = new EvenimentGeneric<Carte>(Id, TipEveniment.RestituireCarte, carte);
+            var e = new EvenimentGeneric<Carte>(carte.Id, TipEveniment.RestituireCarte, carte);
             AplicaRestituie(e);
             PublicaEveniment(e);
         }
         public void AplicaAdaug(EvenimentGeneric<Carte> e)
         {
+            Id = e.Detalii.Id;
+            Nr = e.Detalii.Nr;
+            titlu = e.Detalii.titlu;
+            autor = e.Detalii.autor;
+            an = e.Detalii.an;
+            gent = e.Detalii.gent;
+            genc = e.Detalii.genc;
+            utiliz = e.Detalii.utiliz;
+            stare1 = Stare.InStoc;
+            stare2 = Stare.Disponibila;
             e.Detalii.stare1 = Stare.InStoc;
             e.Detalii.stare2 = Stare.Disponibila;
         }
@@ -88,12 +113,16 @@ namespace DDD.Modele
         public void AplicaImprumut(EvenimentGeneric<Carte> e)
         {
             if (e.Detalii.stare2 != Stare.Imprumutata)
+            {
+                stare2 = Stare.Imprumutata;
                 e.Detalii.stare2 = Stare.Imprumutata;
+            }
             else
                 throw new InvalidOperationException("Cartea nu este disponibila");
         }
         public void AplicaRestituie(EvenimentGeneric<Carte> e)
         {
+            stare2 = Stare.Disponibila;
             e.Detalii.stare2 = Stare.Disponibila;
         }
         private void RedaEveniment(Eveniment e)

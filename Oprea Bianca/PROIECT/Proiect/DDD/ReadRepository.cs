@@ -85,36 +85,6 @@ namespace DDD
                 @"='C:\Users\Bianca\Documents\Proiectarea sistemelor software complexe\Proiect\Proiect\" +
                 @"WebMvcLibrarie\App_Data\DatabaseCarti.mdf';Integrated Security=True"))
             {
-                //         string sql_select = @"SELECT * FROM [dbo].[Evenimente] where [TipEveniment]=@tip";
-                //         var cmds = new SqlCommand(sql_select, con);
-
-                //         cmds.Parameters.AddWithValue("@tip", TipEveniment.AdaugareCarte.ToString());
-                //         con.Open();
-                //         SqlDataReader reader = cmds.ExecuteReader();
-                //         while (reader.Read())
-                //         {
-                //             detalii = reader.GetString(1);
-                //             detalii = JsonConvert.DeserializeObject(detalii).ToString();
-                ////             carte = JsonConvert.DeserializeAnonymousType<Carte>(detalii, new Carte());
-                //             detaliiEv = detalii.Split('"');
-                //             carte.titlu = new Text(detaliiEv[21]);
-                //             if(titlu.Equals(carte.titlu.Nume))
-                //             {
-                //                 carte.Id = new Text(detaliiEv[9]);
-                //                 carte.Nr = new ISSN(detaliiEv[15]);
-                //                 carte.autor = new Text(detaliiEv[27]);
-                //                 carte.an = new Text(detaliiEv[33]);
-                //                 string stare1 = Regex.Match(detaliiEv[36], @"\d+").Value;
-                //                 string stare2 = Regex.Match(detaliiEv[38], @"\d+").Value;
-                //                 string gent = Regex.Match(detaliiEv[40], @"\d+").Value;
-                //                 string genc = Regex.Match(detaliiEv[42], @"\d+").Value;
-                //                 carte.stare1 = (Stare)Enum.ToObject(typeof(Stare), Convert.ToInt32(stare1));
-                //                 carte.stare2 = (Stare)Enum.ToObject(typeof(Stare), Convert.ToInt32(stare2));
-                //                 carte.gent = (Gen_tip)Enum.ToObject(typeof(Gen_tip), Convert.ToInt32(gent));
-                //                 carte.genc = (Gen_continut)Enum.ToObject(typeof(Gen_continut), Convert.ToInt32(genc));
-                //             }
-                //         }
-                //         return carte;
                 foreach (string id in ListID)
                 {
                     string sql_select = @"select row_number() over (partition by IdRadacina order by IdRadacina) 
