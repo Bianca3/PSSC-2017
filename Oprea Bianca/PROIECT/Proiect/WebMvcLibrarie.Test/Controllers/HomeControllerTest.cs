@@ -35,19 +35,19 @@ namespace WebMvcLibrarie.Test.Controllers
             Assert.IsNotNull(result);
         }
 
-        //[TestMethod]
-        //public void VerifMvcTitluri()
-        //{
-        //    List<string> titluri = new List<string>();
-        //    titluri.Add("Ion");
-        //    titluri.Add("Mara");
-        //    Mock<ReadRepository> mockR = new Mock<ReadRepository>();
-        //    Mock<WriteRepository> mockW = new Mock<WriteRepository>();
-        //    mockR.Setup(_ => _.TitluCarti()).Returns(titluri);
-        //    var controller = new HomeController(mockR.Object, mockW.Object);
-        //    var model = (MCarte)(((ViewResult)controller.Index()).Model);
-        //    Assert.AreEqual("Ion", controller.ViewBag.titlu);
-        //    Assert.AreEqual("Mara", controller.ViewBag.titlu);
-        //}
+        [TestMethod]
+        public void VerifMvcTitluri()
+        {
+            List<string> titluri = new List<string>();
+            titluri.Add("Ion");
+            titluri.Add("Mara");
+            Mock<ReadRepository> mockR = new Mock<ReadRepository>();
+            Mock<WriteRepository> mockW = new Mock<WriteRepository>();
+            mockR.Setup(_ => _.TitluCarti()).Returns(titluri);
+            var controller = new HomeController(mockR.Object, mockW.Object);
+            var model = (MCarte)(((ViewResult)controller.Index()).Model);
+            Assert.AreEqual("Ion", controller.ViewBag.titlu);
+            Assert.AreEqual("Mara", controller.ViewBag.titlu);
+        }
     }
 }
